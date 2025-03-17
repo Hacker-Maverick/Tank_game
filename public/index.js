@@ -1,4 +1,4 @@
-const socket = io("http://localhost:3000");
+const socket = io("https://tank-game-rtlq.onrender.com");
 
 // Variables
 let submit = { username: null, roomid: null };
@@ -117,7 +117,7 @@ socket.on("died", () => {
     alert("youdied")
     socket.emit("updateserver", obj)
     socket.disconnect();
-    window.location.href="http://localhost:3000"
+    window.location.href="https://tank-game-rtlq.onrender.com"
 })
 
 socket.on("hitconfirm", (index) => {
@@ -126,7 +126,7 @@ socket.on("hitconfirm", (index) => {
     obj.bullety[index] = -100;
 })
 
-socket.on("win", (data) => {alert(data);socket.disconnect();window.location.href="http://localhost:3000";})
+socket.on("win", (data) => {alert(data);socket.disconnect();window.location.href="https://tank-game-rtlq.onrender.com";})
 
 socket.on("deadtank", (index) => { document.getElementById(index).style.display = "none" })
 
