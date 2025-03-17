@@ -46,6 +46,7 @@ io.on("connection", (socket) => {
         socket.join(submitdata.roomid);
         //assigning values
         let obj = {
+            index:null,
             roomid: null,
             userid: null,
             username: null,
@@ -62,6 +63,7 @@ io.on("connection", (socket) => {
         obj.x = 25;
         obj.y = 30;
         gameobj[parseInt((submitdata.roomid) / 100000)] = [];
+        obj.index=gameobj[parseInt((submitdata.roomid) / 100000)].length;
         gameobj[parseInt((submitdata.roomid) / 100000)].push(obj);
         console.log(`Socket ${socket.id} joined room ${submitdata.roomid}`);
         submitdata.userid = socket.id;
@@ -71,6 +73,7 @@ io.on("connection", (socket) => {
         if (io.sockets.adapter.rooms.has(submitdata.roomid) && gameobj[parseInt((submitdata.roomid) / 100000)].length < 4) {
             socket.join(submitdata.roomid);
             let obj = {
+                index:null,
                 roomid: null,
                 userid: null,
                 username: null,
@@ -98,6 +101,7 @@ io.on("connection", (socket) => {
                 obj.y = 50;
                 obj.noz = 180;
             }
+            obj.index=gameobj[parseInt((submitdata.roomid) / 100000)].length;
             gameobj[parseInt((submitdata.roomid) / 100000)].push(obj);
             console.log(`Socket ${socket.id} joined room ${submitdata.roomid}`);
             submitdata.err = null
@@ -126,8 +130,7 @@ io.on("connection", (socket) => {
     // Game Updates
     socket.on("updateserver", (data) => {
         if (gameobj[parseInt((data.roomid) / 100000)]) {
-            let index = gameobj[parseInt((data.roomid) / 100000)].findIndex(obj => obj.userid === data.userid)
-            gameobj[parseInt((data.roomid) / 100000)][index] = data;
+            gameobj[parseInt((data.roomid) / 100000)][data.index] = data;
             socket.emit("updateclient", gameobj[parseInt((data.roomid) / 100000)])
             checkdeath(data.roomid)
         };
