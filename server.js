@@ -24,7 +24,7 @@ app.get("/game", (req, res) => {
 
 // Server Listening
 server.listen(process.env.PORT || 3000, () => {
-    console.log("Server running at http://localhost:3000");
+    console.log("Server running at https://tank-game-rtlq.onrender.com");
 });
 
 //Variables 
