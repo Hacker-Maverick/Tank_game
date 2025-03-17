@@ -8,7 +8,7 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 // Path
-const mypath = "D:/Git/tank"
+const mypath = process.env.MY_PATH || "D:/Git/tank"
 
 // Express Middlewares
 app.use(express.static("public"));
@@ -23,7 +23,7 @@ app.get("/game", (req, res) => {
 })
 
 // Server Listening
-server.listen(3000, () => {
+server.listen(process.env.PORT || 3000, () => {
     console.log("Server running at http://localhost:3000");
 });
 
