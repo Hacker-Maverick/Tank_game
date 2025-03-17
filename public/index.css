@@ -1,0 +1,46 @@
+body{
+    margin:0px;
+    padding:0px;
+}
+
+#title {}
+
+#createjoin {}
+
+#create {}
+
+#join {}
+
+#inputfields {
+    display: none;
+}
+
+#name {}
+
+#roominput {
+    display: none;
+}
+
+#createbutton {
+    display: none;
+}
+
+#joinbutton {
+    display: none;
+}
+
+#created {
+    display: none;
+}
+
+#roomoutput {
+    display: none;
+}
+
+#display {}
+
+#start {}
+
+#roomjoined {
+    display: none;
+}

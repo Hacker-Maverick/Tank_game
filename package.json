@@ -1,0 +1,19 @@
+{
+  "name": "tankgame",
+  "version": "1.0.0",
+  "description": "This is a online multiplayer tank game. The game is developed using HTML, CSS, JS and NodeJS with Express and socket.io.",
+  "main": "server.js",
+  "scripts": {
+    "test": "test dev",
+    "start": "node server.js"
+  },
+  "author": "Saurav Sagar",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "socket.io": "^4.8.1"
+  },
+  "type": "module"
+}

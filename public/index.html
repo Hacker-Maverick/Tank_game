@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Game</title>
+</head>
+<link rel="stylesheet" href="index.css">
+<body>
+    <div id="title">
+        Welcome to Tank Game.
+    </div>
+    <div id="createjoin">
+        <button id="create">
+            Create room
+        </button>
+        <button id="join">
+            Join room
+        </button>
+    </div>
+    <div id="inputfields">
+        <div id="name">
+            <input type="text" id="username" placeholder="Enter your Username">
+        </div>
+        <div id="roominput">
+            <input type="text" id="roomid" placeholder="Enter your Room-ID">
+        </div>
+        <button id="createbutton">Create Room</button>
+        <button id="joinbutton">Join Room</button>
+    </div>
+    <div id="created">
+        <div id="roomoutput">
+            <div id="display">
+
+            </div>
+            <button id="start">
+                Start Game
+            </button>
+        </div>
+        <div id="roomjoined">
+        </div>
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="index.js"></script>
+</html>
