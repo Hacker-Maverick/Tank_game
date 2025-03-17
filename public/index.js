@@ -101,7 +101,7 @@ socket.on("started", () => {
     // game updates
     const getupdates = setInterval(() => {
         socket.emit("updateserver", obj);
-    }, 20);
+    }, 40);
 
     render();
     controls();
